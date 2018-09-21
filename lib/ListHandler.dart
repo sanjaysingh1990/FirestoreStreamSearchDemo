@@ -11,9 +11,8 @@ class ListHandler extends StatefulWidget {
 
 class ListHandlerState extends State<ListHandler> {
   bool _loading = false;
-  String _searchTxt = "sanjay";
-  Stream _stream1;
-
+  String _searchTxt = "";
+  StreamController<Stream> _postsController;
   Stream getData() {
     Stream stream1 = Firestore.instance
         .collection("users")
@@ -21,7 +20,16 @@ class ListHandlerState extends State<ListHandler> {
         .snapshots();
 
 
+
     return stream1; //Observable.merge(([stream2, stream1]));
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _postsController = new StreamController();
+    _postsController.add(getData());
   }
 
   @override
@@ -47,15 +55,11 @@ class ListHandlerState extends State<ListHandler> {
                   fillColor: Colors.white70),
               onChanged: (text) {
                 print("First text field: $text");
-                _searchTxt=text;
-                _stream1=Firestore.instance
-                    .collection("users")
-                    .where('name', isEqualTo: _searchTxt)
-                    .snapshots();
-//                setState(() {
-//                  _searchTxt = text;
-//                  _loading = true;
-//                });
+
+
+                setState(() {_searchTxt = text;
+                 // _loading = true;
+                });
               },
             ),
           ),
@@ -71,7 +75,10 @@ class ListHandlerState extends State<ListHandler> {
               : new Container(),
           Flexible(
             child: new StreamBuilder(
-                stream: _stream1=getData(),
+                stream: Firestore.instance
+                    .collection('users')
+                    .where('name', isEqualTo: _searchTxt.toLowerCase())
+                    .snapshots(),
                 builder: (context, snapshot) {
                   if (!snapshot.hasData) {
                     print(snapshot);
