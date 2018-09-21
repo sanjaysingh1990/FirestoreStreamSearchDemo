@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "534514033338",
+    "firebase_url": "https://assembly-6e260.firebaseio.com",
+    "project_id": "assembly-6e260",
+    "storage_bucket": "assembly-6e260.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:534514033338:android:3283410bee4834be",
+        "android_client_info": {
+          "package_name": "com.androidaps.assembly"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "534514033338-309gbqc682v99cld4rukviefe6uj7t49.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCngjSRDjgtmBuTDYRpVPwNXVJbLuWT0wk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:534514033338:android:8f8a03e510dd8513",
+        "android_client_info": {
+          "package_name": "com.debut.flutterappfirestoredemo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "534514033338-309gbqc682v99cld4rukviefe6uj7t49.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCngjSRDjgtmBuTDYRpVPwNXVJbLuWT0wk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
